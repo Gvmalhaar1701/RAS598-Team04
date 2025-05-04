@@ -1,101 +1,43 @@
-<!-- Save as index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Team Project Documentation</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-    }
-
-    header {
-      background-color: #004080;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    nav {
-      background-color: #eee;
-      padding: 10px;
-      text-align: center;
-    }
-
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #004080;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 20px;
-    }
-
-    .team-member {
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin-bottom: 10px;
-      background: white;
-      border-radius: 5px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      background-color: #004080;
-      color: white;
-      margin-top: 20px;
-    }
-  </style>
+  <title>Team Project Hub</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <header>
-    <h1>Our Team Project</h1>
-    <p>Documenting our journey and milestones</p>
+    <h1>Welcome to Our Team Project</h1>
+    <p>Explore our work through images and videos</p>
   </header>
 
-  <nav>
-    <a href="#project">Project</a>
-    <a href="#team">Team</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <main>
+    <section class="link-box">
+      <a href="images.html">📸 View Project Images</a>
+    </section>
+    <section class="link-box">
+      <a href="videos.html">🎥 Watch Project Videos</a>
+    </section>
 
-  <section id="project">
-    <h2>Project Overview</h2>
-    <p>This project aims to solve [brief problem statement]. It involves [tech/tools] and is expected to be completed by [date].</p>
-  </section>
-
-  <section id="team">
-    <h2>Meet the Team</h2>
-    <div class="team-member">
-      <h3>Alice Johnson</h3>
-      <p>Role: Project Lead</p>
-    </div>
-    <div class="team-member">
-      <h3>Bob Smith</h3>
-      <p>Role: Developer</p>
-    </div>
-    <div class="team-member">
-      <h3>Charlie Lee</h3>
-      <p>Role: Designer</p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: team@example.com</p>
-  </section>
+    <section id="about">
+      <h2>About the Team</h2>
+      <div class="team-member">
+        <h3>Alice Johnson</h3>
+        <p>Project Lead</p>
+      </div>
+      <div class="team-member">
+        <h3>Bob Smith</h3>
+        <p>Developer</p>
+      </div>
+      <div class="team-member">
+        <h3>Charlie Lee</h3>
+        <p>Designer</p>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Team Project. All rights reserved.</p>
+    <p>&copy; 2025 Team Project</p>
   </footer>
-
 </body>
 </html>
