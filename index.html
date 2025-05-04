@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Team Project Hub</title>
+  <title>Team Project</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #f4f4f4;
+      background: #f9f9f9;
       color: #333;
     }
 
@@ -18,43 +18,28 @@
       text-align: center;
     }
 
-    a {
+    nav {
+      background: #e0e0e0;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 20px;
       color: #004080;
       text-decoration: none;
       font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background-color: #d0e7ff;
     }
 
     main {
       padding: 20px;
       text-align: center;
-    }
-
-    .link-box {
-      background: white;
-      border: 2px solid #004080;
-      padding: 20px;
-      margin: 20px auto;
-      width: 300px;
-      border-radius: 10px;
-      transition: background 0.2s;
-    }
-
-    .link-box:hover {
-      background: #e0f0ff;
-    }
-
-    #about h2 {
-      margin-top: 40px;
-      text-align: center;
-    }
-
-    .team-member {
-      background: white;
-      border: 1px solid #ccc;
-      padding: 15px;
-      margin: 10px auto;
-      width: 300px;
-      border-radius: 8px;
     }
 
     footer {
@@ -70,32 +55,17 @@
 
   <header>
     <h1>Welcome to Our Team Project</h1>
-    <p>Explore our work through images and videos</p>
+    <p>Explore different parts of our work below</p>
   </header>
 
-  <main>
-    <section class="link-box">
-      <a href="images.html">📸 View Project Images</a>
-    </section>
-    <section class="link-box">
-      <a href="videos.html">🎥 Watch Project Videos</a>
-    </section>
+  <nav>
+    <a href="images.html" target="_blank">📸 Images</a>
+    <a href="videos.html" target="_blank">🎥 Videos</a>
+    <a href="about.html" target="_blank">👥 About</a>
+  </nav>
 
-    <section id="about">
-      <h2>About the Team</h2>
-      <div class="team-member">
-        <h3>Alice Johnson</h3>
-        <p>Project Lead</p>
-      </div>
-      <div class="team-member">
-        <h3>Bob Smith</h3>
-        <p>Developer</p>
-      </div>
-      <div class="team-member">
-        <h3>Charlie Lee</h3>
-        <p>Designer</p>
-      </div>
-    </section>
+  <main>
+    <p>This is the home page of our project website. Use the navigation bar to learn more about our work!</p>
   </main>
 
   <footer>
