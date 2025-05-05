@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Team Project</title>
+  <style>
+     main {
+      text-align: center;     /* Center-align the text */
+      padding: 20px;          /* Add some space inside the main block */
+    }
+
+    p {
+      text-align: justify;     /* Align text inside paragraph to the left */
+      padding-left: 60px;
+      padding-right: 60px;   /* Indent the entire paragraph */
+      max-width: 800px;
+      margin: 0 auto;   
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #FFC627;
+      color: black;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .flowchart {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      position: relative;
+    }
+
+    .box {
+      background: #3498db;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-size: 1.1em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .arrow-down {
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 15px solid #555;
+    }
+
+    .decision-box {
+      background: #f39c12;
+      color: white;
+    }
+
+    .branch {
+      display: flex;
+      justify-content: center;
+      gap: 100px;
+      align-items: center;
+      position: relative;
+    }
+
+    .branch::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      width: 200px;
+      height: 2px;
+      background: #555;
+    }
+
+    .label {
+      position: absolute;
+      top: -30px;
+      font-weight: bold;
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    .yes-label {
+      left: 0;
+    }
+
+    .no-label {
+      right: 0;
+    }
+
+    .line-connector {
+      width: 2px;
+      height: 20px;
+      background: #555;
+      margin: 0 auto;
+    }
+    
+    table {
+      margin-left: auto;  /* Auto left margin */
+      margin-right: auto; /* Auto right margin */
+      border-collapse: seperate;
+      border-spacing: 0;
+      border: 2px solid #8c1d40;
+      border-radius: 15px;
+    }
+
+    ul li {
+    text-align: justify;
+    max-width: 800px;  /* Optional: control line width */
+    }
+
+    th, td {
+      border: 1px solid #8c1d40;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    .justified-list-container {
+      max-width: 800px;         /* Set the width of the list block */
+      margin: 0 auto;           /* Center the block horizontally */
+      text-align: justify;      /* Justify the text inside */
+    }
+
+    .justified-list-container ul {
+      padding-left: 20px;       /* Keeps bullets nicely spaced */
+    }
+
+    .justified-list-container li {
+      margin-bottom: 10px;
+    }  
+    nav {
+      background: #FFC627;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      display: inline-block;
+      background-color: #8c1d40;  /* Green background */
+      color: white;               /* White text */
+      padding: 10px 20px;         /* Space around text */
+      border-radius: 20px;        /* Curved corners */
+      text-decoration: none;      /* Remove underline */
+      font-family: sans-serif;
+    }
+
+    nav a:hover {
+      background-color: #000;
+    }
+
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .popup-image {
+      display: block;
+      margin: 0 auto;
+      width: 800px;
+      height: auto;
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scale and shadow */
+    }
+
+    .popup-image:hover {
+      transform: scale(1.1); /* Pop-out effect */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Optional shadow */
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .image-card {
+      background-color: #8c1d40;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+
+    .image-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .image-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .image-caption {
+      padding: 10px;
+      font-size: 1rem;
+      color: #f9f9f9;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    footer {
+      background: #FFC627;
+      color: black;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+
+  
+  </style>
+</head>
+
+<body>
+
+    <header>
+      <h1>RAS598: TEAM-04</h1>
+      <p>STIFFNESS MEASUREMENT USING FORCE GAUGE</p>
+    </header>  
+<main>      
+      <h1><b>ABOUT</b></h1>
+      
+      <p>The stiffness of the ankle in the pogo stick-type model is characterized through a separate controlled experiment using a force-displacement test setup. 
+      This setup is designed to find out loads to the ankle joint and measure the corresponding load, allowing the finding of accurate force-displacement points.</p>
+
+      <br>
+      
+      <div class="flowchart">
+        <div class="box">Project Setup</div>
+        <div class="arrow-down"></div>
+    
+        <div class="box">Define Experiment Parameters</div>
+        <div class="arrow-down"></div>
+        
+        <div class="box">ROS2-Based Software Configuration</div>
+        <div class="arrow-down"></div>
+
+        <div class="box decision-box">Conduct Experiment</div>
+        <div class="arrow-down"></div>
+
+        <div class="box decision-box">Data Collection</div>
+        <div class="arrow-down"></div>
+        
+        <div class="box decision-box">Analysis</div>
+        <div class="arrow-down"></div>
+        
+        <div class="box decision-box">Analysis</div>
+        <div class="arrow-down"></div>
+
+        <div class="branch">
+          <div class="label yes-label">Yes</div>
+          <div class="label no-label">No</div>
+    
+          <div>
+            <div class="line-connector"></div>
+            <div class="box">Continue</div>
+          </div>
+    
+          <div>
+            <div class="line-connector"></div>
+            <div class="box">Stop</div>
+          </div>
+        </div>
+      </div>
+      <h1><b>PROJECT SETUP</b></h1>
+      
+      <h2></h2>
+      <p><em>"How do we get simulation parameters to measure the stiffness and projectile of an ankle design for stability in a quadruped?</em></p>
+      <p>This study contributes to modeling research by evaluating robotic parts designs in various manufacturing and logistics applications.</p>
+      
+      <br>
+      
+      <h1><b>CONCEPT</b></h1>
+      
+      <p>The project involves using two setups:
+  
+        1. OptiTrack via ROS2 to drop test objects at predetermined positions. A vision system, will record drop points and trajectories
+        2. A force gauge is attached to the test object to measure the stiffness and deformation. The setup will fixate the test object to the ground and force will be measured at different displacements and velocities which forms data to find the best fit for the stiffness and damping of the prototype
+        
+        The experiment analyzes how factors such as object weight and shape influence it and how it relates to the simulation readings. ROS2 software will use a node to publish the sensors to ensure repeatability in the experiment. The process flow chart of our project is shown in the chart below. </p>
+      
+      <br>
+      
+      <h1><b>SENSOR INTEGRATION</b></h1>
+      
+      <p>This project aims to develop a ROS 2-based robotic manipulation system that integrates OptiTrack motion capture technology , and force gauge for measuring simulation parameters. 
+        The goal is to drop them from a random height and angle and utilize the OptiTrack and find the projected trajectories. ROS2 will be used for processing and obtaining sensor information and real-time communication, ensuring seamless coordination between different sensor data. This experiment will help in supporting the simulation data of a similar model in MujoCo.
+        The OptiTrack motion capture system will provide for improved tracking. By leveraging ROS 2’s distributed architecture, this project will enhance trajectory adaptation in real-time. The combination of motion capture (OptiTrack) will enable high-accuracy object handling. The findings from this experiment will have broader applications in industrial automation, assistive robotics, and testing.</p>
+      
+      <br>
+      
+      <h1><b>INTERFACE AND AUTOMATION</b></h1>
+      
+      <p>The sensor data will be obtained using ROS2, and custom ROS2 nodes for real-time interaction. The experimentation result and automation will be influenced through:
+        
+        <div class="justified-list-container"> 
+        <ul>
+          <li><b>Vision-based Perception:</b> OptiTrack motion capture data will be fused to provide high-accuracy object localization.</li>
+          <li><b>Adaptive Motion Planning:</b> ROS2 will handle trajectory updates dynamically, allowing the robot to adjust its movements based on real-time feedback.</li>
+          <li><b>Automation:</b>For automation, we used a UR5 to automate the experimental setup to remove the possibiliity of human error and repeatability.Third point</li>
+        </ul>
+        </div>  
+      
+        To facilitate monitoring and user interaction, the following interfaces will be developed:
+        
+        <div class="justified-list-container">
+        <ul>
+          <li><b>Web-Based Dashboard:</b> A user-friendly interface displaying object tracking data, and force gauge readings.</li>
+          <li><b>Data Logging System:</b> All relevant data (object positions, timestamps, drop locations, and trajectory corrections) will be stored in a ROS 2-based database for post-experiment analysis.</li>
+          <li><b>UR5 Control:</b> Develop a path planning program for UR5 for movement which facilitates the experiments.</li>
+        </ul>
+        </div>
+      </p>
+      
+      <br>
+      
+      <h1><b>CONTROL AND AUTONOMY</b></h1>
+      
+      <p><b>A low-latency feedback loop</b> will be established to provide real-time feedback to the UR5 controller where sensor data is processed and transmitted.
+        This enables the UR5 inverse kinematics and control algorithms to dynamically adjust grip strength and drop execution in real-time.</p>
+      <p><b>A High-Level decision-making</b> module will also read long-term trends from sensor feedback to make higher-level decisions.</p>
+      
+      <br>
+  
+      <h1><b>RESOURCES NEEDED</b></h1>
+      
+      <p>Since we heavily require camera sensing and sensor fusion, we would be needing knowledge about Control Systems and Autonomous Algorithms, Computer Vision, Object tracking and Sensor Fusion and Filtering Techniques.
+        Furthemore, self study and expert advice will go a long way in covering the gaps.</p>
+      <br>
+  
+      <p><b>Changes in environmental conditions</b>
+        
+        <div class="justified-list-container">
+        <ul>
+          <li>To handle variability in the environment, 
+            the robot will leverage sensor fusion by combining OptiTrack motion capture for global positioning and force gauge for precise local object tracking, 
+            ensuring robust localization and more research data.</li>
+          <li>In case of misalignment, 
+            the system will implement error recovery strategies, such as reattempting detection and adjusting the pick position.
+            Additionally, ROS 2-based dynamic reconfiguration will allow real-time parameter tuning and trajectory modifications, supported by a web-based interface for manual overrides. This integrated approach ensures the system remains resilient and adaptable in dynamic environments, 
+            maintaining precise and reliable object manipulation.</li>
+        </ul>
+        </div>
+      
+      </p>
+  
+      <br>
+  
+      <h1><b>IMPACT</b></h1>
+      <p>Our team has no prior experience with ROS2, sensor fusion, or object detection, making this a valuable challenge for us to advance in robotic experimentation. We are focused on developing a robust and standalone test procedure for dropping test materials from a height.
+        This process can be applied to material testing, orientation-based drop tests, 
+        impact conditioning, and assessing real-world behavior under critical conditions. Such a testing framework could significantly enhance rescue operations by evaluating the impact on a robot when deployed from higher floors, 
+        such as the 4th or 5th, ensuring better reliability in high-stakes scenarios.</p>
+      
+      <br>
+      
+      <h1><b>ADVISING</b></h1>
+      <p>We will be mentored by Dr. Daniel M. Aukes, who has expressed his interest in providing mentoring and access to state-of-the-art hardware facilities. 
+        Dr. Aukes' guidance will be a key factor in ensuring the technical aspects of the project are addressed effectively. His demands involve regular progress tracking, strict adherence to project milestones, and active participation in troubleshooting sessions. 
+        Other facilities, such as laboratory access and state-of-the-art simulation tools, have been guaranteed to aid in our experimental setup. </p>
+      
+      <br>
+      
+      <h1><b>TIMELINE(RECENTLY UPDATED)</b></h1>
+      
+      <div style="text-align: center;">
+        <img src="new_timeline.jpg" alt="Timeline" class="popup-image">
+      </div>
+      
+  
+      <br>
+  
