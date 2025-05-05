@@ -125,9 +125,36 @@
       Two systems are combined in the setup: a force measurement system with a calibrated gauge to apply controlled tensile loads, and a motion capture system that tracks movement in six degrees of freedom using OptiTrack cameras and a reflective marker array. While force data record the joint's mechanical response under various circumstances, motion data and force data are processed through a ROS 2 interface and displayed in real time using a custom PyQt5 GUI. 
       When combined, these systems allow for an accurate examination of how the ankle attachment behaves under dynamic stress, supporting the development of more robust, stable, and simulation-accurate joints for future quadrupedal robots.</p>
     <br>
+    <h1><b>RESEARCH QUESTION</b></h1>
+    <p><em>"How do we get simulation parameters to measure the stiffness and projectile of an ankle design for stability in a quadruped?</em>
+    This study contributes to modeling research by evaluating robotic parts designs in various manufacturing and logistics applications.</p>
+    <br>
+    <h1>CONCEPT</h1>
+    <p>The project involves using two setups:
 
-
-  </main>
+      1. OptiTrack via ROS2 to drop test objects at predetermined positions. A vision system, will record drop points and trajectories
+      2. A force gauge is attached to the test object to measure the stiffness and deformation. The setup will fixate the test object to the ground and force will be measured at different displacements and velocities which forms data to find the best fit for the stiffness and damping of the prototype
+      
+      The experiment analyzes how factors such as object weight and shape influence it and how it relates to the simulation readings. ROS2 software will use a node to publish the sensors to ensure repeatability in the experiment. The process flow chart of our project is shown in the chart below. </p>
+    <br>
+    <h1>SENSOR INTEGRATION</h1>
+    <p>This project aims to develop a ROS 2-based robotic manipulation system that integrates OptiTrack motion capture technology , and force gauge for measuring simulation parameters. 
+      The goal is to drop them from a random height and angle and utilize the OptiTrack and find the projected trajectories. ROS2 will be used for processing and obtaining sensor information and real-time communication, ensuring seamless coordination between different sensor data. This experiment will help in supporting the simulation data of a similar model in MujoCo.
+      The OptiTrack motion capture system will provide for improved tracking. By leveraging ROS 2’s distributed architecture, this project will enhance trajectory adaptation in real-time. The combination of motion capture (OptiTrack) will enable high-accuracy object handling. The findings from this experiment will have broader applications in industrial automation, assistive robotics, and testing.</p>
+    <br>
+    <h1>INTERFACE AND AUTOMATION</h1>
+    <p>The sensor data will be obtained using ROS2, and custom ROS2 nodes for real-time interaction. The experimentation result and automation will be influenced through:
+      1. Vision-based Perception: OptiTrack motion capture data will be fused to provide high-accuracy object localization.
+      2. Adaptive Motion Planning: ROS2 will handle trajectory updates dynamically, allowing the robot to adjust its movements based on real-time feedback. 
+      For automation, we used a UR5 to automate the experimental setup to remove the possibiliity of human error and repeatability  
+    
+      To facilitate monitoring and user interaction, the following interfaces will be developed:
+      
+      1. Web-Based Dashboard: A user-friendly interface displaying object tracking data, and force gauge readings.
+      2. Data Logging System: All relevant data (object positions, timestamps, drop locations, and trajectory corrections) will be stored in a ROS 2-based database for post-experiment analysis.
+      3. UR5 Control: Develop a path planning program for UR5 for movement which facilitates the experiments.
+    </p>
+    </main>
 
   <footer>
     <p>RAS 598: TEAM-04</p>
