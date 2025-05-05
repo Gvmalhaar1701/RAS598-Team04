@@ -143,7 +143,7 @@
     .gallery-section.active {
       display: flex;
     }
-
+    
     /* Modal */
     .modal {
       display: none;
@@ -176,6 +176,15 @@
       font-size: 40px;
       color: white;
       cursor: pointer;
+    }
+
+    .dropdown-box {
+        display: inline-block;
+        background-color: #ffffff;
+        padding: 15px 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        margin-bottom: 20px;
     }
 
     a {
@@ -255,6 +264,15 @@
         <p>The specimen or test object is fixated on the ground via supports and screws and via strings, the specimen is attached to the hook attachment of a Force Gauge which is placed horizontally and tensile forces are added onto the ankle component to get the reading.
            The Force Gauge will pass through a few marked displacement points and the force readings are plotted to find a best fit.</p>
         
+
+           <div class="dropdown-box">
+            <label for="mediaType">Choose media:</label>
+            <select id="mediaType" onchange="switchGallery()">
+              <option value="images">Images</option>
+              <option value="videos">Videos</option>
+            </select>
+          </div>
+          
            <label for="mediaType">Choose media:</label>
            <select id="mediaType" onchange="switchGallery()">
              <option value="images">Images</option>
