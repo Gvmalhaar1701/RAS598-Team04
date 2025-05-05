@@ -105,9 +105,6 @@
     ul li {
       text-align: justify;
       margin: 0 auto;
-      width: 80%; /* Adjust width as needed */
-      padding: 10px;
-      line-height: 1.6;
     }
     main {
       padding: 20px;
@@ -401,6 +398,7 @@
         <a href="https://mark-10.com/products/force-gauges/series-4/#tab-1" target="_blank">Mark-10 Series 4 Force Gauge</a>
       </nav>
       In terms of ROS2 implementation, we we created a publisher and subscriber nodes.
+      <div class="justified-list-container"> 
       <ul>
         <li>
           The publisher node will access the data from the serial communicator and publish a topic <code>\force_reading</code> which continuously updates the force reading from the force gauge.
@@ -414,6 +412,7 @@
           </ul>
         </li>
       </ul>
+      </div>
           
      
         <br>
