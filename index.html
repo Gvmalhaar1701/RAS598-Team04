@@ -94,21 +94,17 @@
       text-align: center;
     }
 
-    .timeline-container {
-      text-align: center;
-      margin-top: 60px;
+    .popup-image {
+      display: block;
+      margin: 0 auto;
+      width: 800px;
+      height: auto;
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scale and shadow */
     }
 
-    .timeline-img {
-      width: 600px; /* Small size initially */
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .timeline-img:active {
-      transform: scale(1.2); /* Pop-out effect */
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    .popup-image:hover {
+      transform: scale(1.1); /* Pop-out effect */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Optional shadow */
     }
 
     footer {
@@ -267,8 +263,8 @@
     
     <h1><b>TIMELINE</b></h1>
     
-    <div class="timeline-container">
-      <img src="new_timeline.jpg" alt="Timeline" class="timeline-img">
+    <div style="text-align: center;">
+      <img src="timeline.jpg" alt="Timeline" class="popup-image">
     </div>
     
 
