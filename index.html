@@ -57,7 +57,7 @@
     }
     
     .justified-list-container {
-      max-width: 600px;         /* Set the width of the list block */
+      max-width: 800px;         /* Set the width of the list block */
       margin: 0 auto;           /* Center the block horizontally */
       text-align: justify;      /* Justify the text inside */
     }
@@ -187,11 +187,14 @@
       </div>  
     
       To facilitate monitoring and user interaction, the following interfaces will be developed:
+      
+      <div class="justified-list-container">
       <ul>
         <li><b>Web-Based Dashboard:</b> A user-friendly interface displaying object tracking data, and force gauge readings.</li>
         <li><b>Data Logging System:</b> All relevant data (object positions, timestamps, drop locations, and trajectory corrections) will be stored in a ROS 2-based database for post-experiment analysis.</li>
         <li><b>UR5 Control:</b> Develop a path planning program for UR5 for movement which facilitates the experiments.</li>
       </ul>
+      </div>
     </p>
     
     <br>
@@ -211,6 +214,7 @@
     <br>
 
     <p><b>Changes in environmental conditions</b>
+      <div class="justified-list-container">
       <ul>
         <li>To handle variability in the environment, 
           the robot will leverage sensor fusion by combining OptiTrack motion capture for global positioning and force gauge for precise local object tracking, 
@@ -220,6 +224,7 @@
           Additionally, ROS 2-based dynamic reconfiguration will allow real-time parameter tuning and trajectory modifications, supported by a web-based interface for manual overrides. This integrated approach ensures the system remains resilient and adaptable in dynamic environments, 
           maintaining precise and reliable object manipulation.</li>
       </ul>
+      </div>
     </p>
 
     <br>
