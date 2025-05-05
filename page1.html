@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Team Project</title>
+  <title>ForceGauge</title>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
   <style>
      main {
       text-align: center;     /* Center-align the text */
@@ -24,6 +28,15 @@
       color: #333;
     }
 
+    .mermaid {
+      max-width: 100%;
+      margin: auto;
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
     header {
       background: #FFC627;
       color: black;
@@ -31,77 +44,6 @@
       text-align: center;
     }
 
-    .flowchart {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
-      position: relative;
-    }
-
-    .box {
-      background: #3498db;
-      color: white;
-      padding: 15px 30px;
-      border-radius: 10px;
-      font-size: 1.1em;
-      position: relative;
-      z-index: 1;
-    }
-
-    .arrow-down {
-      width: 0;
-      height: 0;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-top: 15px solid #555;
-    }
-
-    .decision-box {
-      background: #f39c12;
-      color: white;
-    }
-
-    .branch {
-      display: flex;
-      justify-content: center;
-      gap: 100px;
-      align-items: center;
-      position: relative;
-    }
-
-    .branch::before {
-      content: '';
-      position: absolute;
-      top: -20px;
-      width: 200px;
-      height: 2px;
-      background: #555;
-    }
-
-    .label {
-      position: absolute;
-      top: -30px;
-      font-weight: bold;
-      font-size: 0.9em;
-      color: #555;
-    }
-
-    .yes-label {
-      left: 0;
-    }
-
-    .no-label {
-      right: 0;
-    }
-
-    .line-connector {
-      width: 2px;
-      height: 20px;
-      background: #555;
-      margin: 0 auto;
-    }
-    
     table {
       margin-left: auto;  /* Auto left margin */
       margin-right: auto; /* Auto right margin */
@@ -239,42 +181,16 @@
 
       <br>
       
-      <div class="flowchart">
-        <div class="box">Project Setup</div>
-        <div class="arrow-down"></div>
-    
-        <div class="box">Define Experiment Parameters</div>
-        <div class="arrow-down"></div>
-        
-        <div class="box">ROS2-Based Software Configuration</div>
-        <div class="arrow-down"></div>
-
-        <div class="box decision-box">Conduct Experiment</div>
-        <div class="arrow-down"></div>
-
-        <div class="box decision-box">Data Collection</div>
-        <div class="arrow-down"></div>
-        
-        <div class="box decision-box">Analysis</div>
-        <div class="arrow-down"></div>
-        
-        <div class="box decision-box">Analysis</div>
-        <div class="arrow-down"></div>
-
-        <div class="branch">
-          <div class="label yes-label">Yes</div>
-          <div class="label no-label">No</div>
-    
-          <div>
-            <div class="line-connector"></div>
-            <div class="box">Continue</div>
-          </div>
-    
-          <div>
-            <div class="line-connector"></div>
-            <div class="box">Stop</div>
-          </div>
-        </div>
+      <div class="mermaid">
+        graph TD  
+          A[Project Setup] --> B[Define Experiment Parameters]  
+          B --> C[ROS2-Based Software Configuration]  
+          C --> D[Conduct Experiment]  
+          D --> E[Data Collection]  
+          E --> F[Analysis]  
+          F --> G{Iterate?}  
+          G -->|Yes| D  
+          G -->|No| H[Report Findings - find stiffness]
       </div>
       <h1><b>PROJECT SETUP</b></h1>
       
