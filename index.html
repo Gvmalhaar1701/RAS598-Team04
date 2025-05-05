@@ -55,7 +55,19 @@
       padding: 10px;
       text-align: center;
     }
+    
+    .justified-list-container {
+      max-width: 600px;         /* Set the width of the list block */
+      margin: 0 auto;           /* Center the block horizontally */
+      text-align: justify;      /* Justify the text inside */
+    }
 
+    .justified-list-container ul {
+      padding-left: 20px;       /* Keeps bullets nicely spaced */
+    }
+
+    .justified-list-container li {
+      margin-bottom: 10px;
     nav {
       background: #FFC627;
       padding: 10px;
@@ -164,11 +176,14 @@
     <h1><b>INTERFACE AND AUTOMATION</b></h1>
     
     <p>The sensor data will be obtained using ROS2, and custom ROS2 nodes for real-time interaction. The experimentation result and automation will be influenced through:
+      
+      <div class="justified-list-container"> 
       <ul>
         <li><b>Vision-based Perception:</b> OptiTrack motion capture data will be fused to provide high-accuracy object localization.</li>
         <li><b>Adaptive Motion Planning:</b> ROS2 will handle trajectory updates dynamically, allowing the robot to adjust its movements based on real-time feedback.</li>
         <li><b>Automation:</b>For automation, we used a UR5 to automate the experimental setup to remove the possibiliity of human error and repeatability.Third point</li>
-      </ul>  
+      </ul>
+      </div>  
     
       To facilitate monitoring and user interaction, the following interfaces will be developed:
       <ul>
