@@ -11,9 +11,9 @@
 
     p {
       text-align: justify;     /* Align text inside paragraph to the left */
-      padding-left: 40px;
-      padding-right: 40px;   /* Indent the entire paragraph */
-      max-width: 600px;
+      padding-left: 60px;
+      padding-right: 60px;   /* Indent the entire paragraph */
+      max-width: 800px;
       margin: 0 auto;   
     }
 
@@ -43,6 +43,11 @@
       border-spacing: 0;
       border: 2px solid #8c1d40;
       border-radius: 15px;
+    }
+
+    ul li {
+    text-align: justify;
+    max-width: 800px;  /* Optional: control line width */
     }
 
     th, td {
@@ -83,23 +88,7 @@
       padding: 15px;
       margin-top: 40px;
     }
-    
-    .timeline-container {
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    .timeline-img {
-      width: 300px; /* Small size initially */
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .timeline-img:active {
-      transform: scale(1.2); /* Pop-out effect */
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
+  
   </style>
 </head>
 <body>
@@ -235,13 +224,15 @@
     <br>
     
     <h1><b>TIMELINE</b></h1>
-    <div class="timeline-container">
-      <img src="new_timeline.jpg" alt="Timeline" class="timeline-img">
+    
+    <div style="text-align: center;">
+      <img src="new_timeline.jpg" alt="Timeline" style="width: 800px;">
     </div>
+    
 
     <br>
 
-    
+
     </main>
 
   <footer>
