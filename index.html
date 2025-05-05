@@ -4,6 +4,17 @@
   <meta charset="UTF-8" />
   <title>Team Project</title>
   <style>
+     main {
+      text-align: center;     /* Center-align the text */
+      padding: 20px;          /* Add some space inside the main block */
+    }
+
+    p {
+      text-indent: 40px;      /* Indent the first line of the paragraph */
+      max-width: 600px;       /* Optional: limit line width for readability */
+      margin: 0 auto;         /* Center the paragraph block itself */
+    }
+    
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -100,15 +111,13 @@
       </tr>
 
     </table>
-    <h1><b>INTRODUCTION</b></h1>
     
     <br>
-
+    <h1><b>INTRODUCTION</b></h1>
     <p> As quadrupedal robotics develops, stable, responsive, and terrain-adaptive movement is achieved in large part through the mechanical design of joints, especially the ankle. In order to describe the stiffness and damping characteristics of a novel ankle attachment and to inform the simulation and design of robotics, this report presents a specially designed experimental setup.
       Two systems are combined in the setup: a force measurement system with a calibrated gauge to apply controlled tensile loads, and a motion capture system that tracks movement in six degrees of freedom using OptiTrack cameras and a reflective marker array. While force data record the joint's mechanical response under various circumstances, motion data and force data are processed through a ROS 2 interface and displayed in real time using a custom PyQt5 GUI. 
       When combined, these systems allow for an accurate examination of how the ankle attachment behaves under dynamic stress, supporting the development of more robust, stable, and simulation-accurate joints for future quadrupedal robots.</p>
-    
-      <br>
+    <br>
 
 
   </main>
