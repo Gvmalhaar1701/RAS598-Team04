@@ -111,51 +111,71 @@
       text-align: center;
     }
 
-    .popup-image {
-      display: block;
-      margin: 0 auto;
-      width: 800px;
-      height: auto;
-      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scale and shadow */
-    }
-
-    .popup-image:hover {
-      transform: scale(1.1); /* Pop-out effect */
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Optional shadow */
+    select {
+      padding: 8px;
+      font-size: 1em;
+      margin-bottom: 20px;
     }
 
     .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
     }
 
-    .image-card {
-      background-color: #8c1d40;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-align: center;
+    .gallery img, .gallery video {
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.2s;
     }
 
-    .image-card:hover {
+    .gallery img:hover, .gallery video:hover {
       transform: scale(1.05);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     }
 
-    .image-card img {
+    .gallery-section {
+      display: none;
+    }
+
+    .gallery-section.active {
+      display: flex;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 80%;
+    }
+
+    .modal-content video, .modal-content img {
       width: 100%;
       height: auto;
-      display: block;
+      border-radius: 10px;
     }
 
-    .image-caption {
-      padding: 10px;
-      font-size: 1rem;
-      color: #f9f9f9;
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
     }
 
     a {
@@ -227,13 +247,78 @@
       
       <br>  
       
-      <p>Experimented data will then be collected to study on the attachment and be iterated with different parameters. </p>
+      <p><em>Experimented data will then be collected to study on the attachment and be iterated with different parameters.</em> </p>
       
       <br>
 
+      <h1><b>HARDWARE CONFIGURATION</b></h1>
+        <p>The specimen or test object is fixated on the ground via supports and screws and via strings, the specimen is attached to the hook attachment of a Force Gauge which is placed horizontally and tensile forces are added onto the ankle component to get the reading.
+           The Force Gauge will pass through a few marked displacement points and the force readings are plotted to find a best fit.</p>
+        
+           <label for="mediaType">Choose media:</label>
+           <select id="mediaType" onchange="switchGallery()">
+             <option value="images">Images</option>
+             <option value="videos">Videos</option>
+           </select>
+         
+           <div id="images" class="gallery gallery-section active">
+             <img src="image1.jpg" alt="Image 1" onclick="openModal(this.src)">
+             <img src="image2.jpg" alt="Image 2" onclick="openModal(this.src)">
+             <!-- Add more images -->
+           </div>
+         
+           <div id="videos" class="gallery gallery-section">
+             <video src="video1.mp4" onclick="openModal(this.src)" muted></video>
+             <video src="video2.mp4" onclick="openModal(this.src)" muted></video>
+             <!-- Add more videos -->
+           </div>
+         
+           <!-- Modal -->
+           <div id="popupModal" class="modal" onclick="closeModal()">
+             <span class="close">&times;</span>
+             <div class="modal-content" id="modalContent"></div>
+           </div>
+         
+           <script>
+             function switchGallery() {
+               const selection = document.getElementById("mediaType").value;
+               document.querySelectorAll('.gallery-section').forEach(section => {
+                 section.classList.remove('active');
+               });
+               document.getElementById(selection).classList.add('active');
+             }
+         
+             function openModal(src) {
+               const modal = document.getElementById("popupModal");
+               const content = document.getElementById("modalContent");
+               content.innerHTML = "";
+         
+               const ext = src.split('.').pop().toLowerCase();
+               if (['mp4', 'webm', 'ogg'].includes(ext)) {
+                 const video = document.createElement("video");
+                 video.src = src;
+                 video.controls = true;
+                 video.autoplay = true;
+                 content.appendChild(video);
+               } else {
+                 const img = document.createElement("img");
+                 img.src = src;
+                 content.appendChild(img);
+               }
+         
+               modal.style.display = "flex";
+             }
+         
+             function closeModal() {
+               const modal = document.getElementById("popupModal");
+               modal.style.display = "none";
+             }
+         
+             // Optional: Close when clicking the '×'
+             document.querySelector(".close").onclick = closeModal;
+           </script>
 
-
-      <h1><b>CONCEPT</b></h1>
+      
       
       <p>The project involves using two setups:
   
