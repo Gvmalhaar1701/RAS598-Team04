@@ -9,7 +9,7 @@
       padding: 20px;          /* Add some space inside the main block */
     }
 
-    p {
+    body p {
       text-align: justify;     /* Align text inside paragraph to the left */
       padding-left: 60px;
       padding-right: 60px;   /* Indent the entire paragraph */
@@ -23,7 +23,6 @@
       background: #f9f9f9;
       color: #333;
     }
-
     header {
       background: #FFC627;
       color: black;
@@ -153,6 +152,9 @@
       padding: 15px;
       margin-top: 40px;
     }
+    footer p {
+      text-align: center;
+    }
 
 
   
@@ -196,9 +198,11 @@
     
     <h1><b>INTRODUCTION</b></h1>
     
-    <p> As quadrupedal robotics develops, stable, responsive, and terrain-adaptive movement is achieved in large part through the mechanical design of joints, especially the ankle. In order to describe the stiffness and damping characteristics of a novel ankle attachment and to inform the simulation and design of robotics, this report presents a specially designed experimental setup.
-      Two systems are combined in the setup: a force measurement system with a calibrated gauge to apply controlled tensile loads, and a motion capture system that tracks movement in six degrees of freedom using OptiTrack cameras and a reflective marker array. While force data record the joint's mechanical response under various circumstances, motion data and force data are processed through a ROS 2 interface and displayed in real time using a custom PyQt5 GUI. 
-      When combined, these systems allow for an accurate examination of how the ankle attachment behaves under dynamic stress, supporting the development of more robust, stable, and simulation-accurate joints for future quadrupedal robots.</p>
+    <p> As quadrupedal robotics develops, stable, responsive, and terrain-adaptive movement is achieved in large part through the mechanical design of joints, especially the ankle. 
+      In order to describe the stiffness and damping characteristics of a novel ankle attachment and to inform the simulation and design of robotics, this report presents a specially designed experimental setup.
+      Two systems are combined in the setup: 
+      a force measurement system with a calibrated gauge to apply controlled tensile loads, and a motion capture system that tracks movement in six degrees of freedom using OptiTrack cameras and a reflective marker array. While force data record the joint's mechanical response under various circumstances, motion data and force data are processed through a ROS 2 interface and displayed in real time using a custom PyQt5 GUI. 
+      When results are combined, these systems allow for an accurate examination of how the ankle attachment behaves under dynamic stress, supporting the development of more robust, stable, and simulation-accurate joints for future quadrupedal robots.</p>
     
     <br>
     
@@ -309,6 +313,12 @@
 
     <br>
 
+    <h1><b>LEARNING</b></h1>
+    <p>Integrating OptiTrack and Force Gauge has taught us about working around networking via serial communication(force gauge) and 
+      using ethernet and using Networking SDKs via ethernet(OptiTrack). 
+      Since previous resources regarding integration of optitrack specifically was sparse, we faced networking issues and firewall issues and thanks to professors and classmates we found solutions 
+    to work around it, which will be explained in the specific experimentation tabs</p>
+    
     <h1><b>EXPERIMENTATIONS</b></h1>
     
     <div class="gallery">

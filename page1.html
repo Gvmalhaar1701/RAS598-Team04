@@ -246,10 +246,12 @@
       <p>STIFFNESS MEASUREMENT USING FORCE GAUGE</p>
     </header>  
 <main>      
-      <h1><b>ABOUT</b></h1>
+      <h1><b>SCOPE</b></h1>
       
-      <p>The stiffness of the ankle in the pogo stick-type model is characterized through a separate controlled experiment using a force-displacement test setup. 
-      This setup is designed to find out loads to the ankle joint and measure the corresponding load, allowing the finding of accurate force-displacement points.</p>
+      <p>The stiffness of the ankle in the pogo stick-type model is characterized through 
+        a separate controlled experiment using a force-displacement test setup. 
+      This setup is designed to find out loads to the ankle joint and measure the corresponding load, 
+      allowing the finding of accurate force-displacement points.</p>
 
       <br>
       
@@ -265,7 +267,7 @@
           G -->|No| H[Report Findings - find stiffness]
       </div>
       
-      <h1><b>PROJECT SETUP</b></h1>
+      <h1><b>EXPERIMENTATION WORKFLOW</b></h1>
       
       <h2>Project Setup:</h2>
       <p>The setup contains an object which, for this project, a prototype of a ankle + leg of a quadruped similar to a pogostick model, with a Force Gauge ready to record data</p>
@@ -286,7 +288,8 @@
         the force values with respect to time and passed through displacement markers with varying velocities to find out stiffness and damping.</p>
       
       <h2>Data Collection:</h2>
-      <p>A best fit line is found with the data obtained is calculated whose slope will give stiffness(force vs displacement) or damping(force vs velocity)</p>
+      <p>A best fit line is found with the data obtained is calculated whose slope will give 
+        stiffness(force vs displacement) or damping(force vs velocity)</p>
       
       <br>  
       
@@ -296,10 +299,16 @@
 
       <h1><b>HARDWARE CONFIGURATION</b></h1>
         <p>The specimen or test object is fixated on the ground via supports and screws and via strings, the specimen is attached to the hook attachment of a Force Gauge which is placed horizontally and tensile forces are added onto the ankle component to get the reading.
-           The Force Gauge will pass through a few marked displacement points and the force readings are plotted to find a best fit.</p>
-        
+           The Force Gauge will pass through a few marked displacement points and the force readings are plotted to find a best fit.(Check Image Gallery)</p>
+        <p>Previously, data was taken with physical means, i.e. a human hand was used to pull the force gauge and mark the measurements, 
+          the time is obtained from the saved recording of the reading.</p>
+        <p>Since it leads to a lot of human error, a UR5 is inculcated(Image Gallery) to reduce the human error and give more control to velocity.</p>
+      
+      <br>
 
-           <div class="dropdown-box">
+
+      <h1><b>IMAGE GALLERY</b></h1>     
+      <div class="dropdown-box">
             <label for="mediaType">Choose media:</label>
             <select id="mediaType" onchange="switchGallery()">
               <option value="images">Images</option>
@@ -313,7 +322,7 @@
            </div>
          
            <div id="videos" class="gallery gallery-section">
-             <video src="video1.mp4" onclick="openModal(this.src)" muted></video>
+             <video src="https://youtube.com/embed/WxmLll2VZsE?feature=share" onclick="openModal(this.src)" muted></video>
              <video src="video2.mp4" onclick="openModal(this.src)" muted></video>
              <!-- Add more videos -->
            </div>
