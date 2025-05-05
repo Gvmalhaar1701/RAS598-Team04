@@ -8,7 +8,13 @@
     mermaid.initialize({ startOnLoad: true });
   </script>
   <style>
-     main {
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+     
+    main {
       text-align: center;     /* Center-align the text */
       padding: 20px;          /* Add some space inside the main block */
     }
@@ -31,6 +37,30 @@
     font-size: 1.8em;
     font-style: italic;
   }
+  .video-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .main-content {
+      display: none;
+      padding: 40px;
+      text-align: center;
+    }
 
     .mermaid {
       max-width: 80%;
@@ -221,6 +251,19 @@
       opacity: 1;
     }
 
+    .popup-image {
+      display: block;
+      margin: 0 auto;
+      width: 800px;
+      height: auto;
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scale and shadow */
+    }
+
+    .popup-image:hover {
+      transform: scale(1.1); /* Pop-out effect */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Optional shadow */
+    }
+
     a {
       text-decoration: none;
       color: inherit;
@@ -240,262 +283,213 @@
 </head>
 
 <body>
-
+  <div class="main-content" id="mainContent">
     <header>
       <h1>RAS598: TEAM-04</h1>
       <p>STIFFNESS MEASUREMENT USING FORCE GAUGE</p>
-    </header>  
-<main>      
-      <h1><b>SCOPE</b></h1>
-      
-      <p>The stiffness of the ankle in the pogo stick-type model is characterized through 
-        a separate controlled experiment using a force-displacement test setup. 
-      This setup is designed to find out loads to the ankle joint and measure the corresponding load, 
-      allowing the finding of accurate force-displacement points.</p>
+    </header>
 
-      <br>
-      
-      <div class="mermaid">
-        graph TD  
-          A[Project Setup] --> B[Define Experiment Parameters]  
-          B --> C[ROS2-Based Software Configuration]  
-          C --> D[Conduct Experiment]  
-          D --> E[Data Collection]  
-          E --> F[Analysis]  
-          F --> G{Iterate?}  
-          G -->|Yes| D  
-          G -->|No| H[Report Findings - find stiffness]
-      </div>
-      
-      <h1><b>EXPERIMENTATION WORKFLOW</b></h1>
-      
-      <h2>Project Setup:</h2>
-      <p>The setup contains an object which, for this project, a prototype of a ankle + leg of a quadruped similar to a pogostick model, with a Force Gauge ready to record data</p>
-      
-      <h2>Define Experiment Parameters:</h2>
-      <p>A setup in which the model is fixated to the ground and a string is used to attach the leg and a hook of the force gauge. 
-        A set of displacement points are marked and the force gauge readings are taken at those points.
-        The values are graphed out and the best fit is made to find the stiffness.</p>
-      
-      <h2>ROS2-Based Software Configuration:</h2>
-      <p>The data of the Force readings are published and subscribed via ROS2 software to visualize the data. A GUI is also constructed using PyQT5 which will:
-        1. Visualize the Data (2-D Plot of Force data with respect to time).
-        2. Contain a button to start and stop recording
-        3. A recording system to save the data into a bagfile or a csv file.</p>
-      
-      <h2>Conduct Experiment:</h2>
-      <p>The prototype is provided with tensile force, with the force gauge recording 
-        the force values with respect to time and passed through displacement markers with varying velocities to find out stiffness and damping.</p>
-      
-      <h2>Data Collection:</h2>
-      <p>A best fit line is found with the data obtained is calculated whose slope will give 
-        stiffness(force vs displacement) or damping(force vs velocity)</p>
-      
-      <br>  
-      
-      <p><em>Experimented data will then be collected to study on the attachment and be iterated with different parameters.</em> </p>
-      
-      <br>
+    <main>
+      <section>
+        <h1>SCOPE</h1>
+        <p>The stiffness of the ankle in the pogo stick-type model is characterized through 
+          a separate controlled experiment using a force-displacement test setup. 
+          This setup is designed to apply loads to the ankle joint and measure the corresponding force,
+          allowing the identification of accurate force-displacement points.
+        </p>
 
-      <h1><b>HARDWARE CONFIGURATION</b></h1>
-        <p>The specimen or test object is fixated on the ground via supports and screws and via strings, the specimen is attached to the hook attachment of a Force Gauge which is placed horizontally and tensile forces are added onto the ankle component to get the reading.
-           The Force Gauge will pass through a few marked displacement points and the force readings are plotted to find a best fit.(Check Image Gallery)</p>
-        <p>Previously, data was taken with physical means, i.e. a human hand was used to pull the force gauge and mark the measurements, 
-          the time is obtained from the saved recording of the reading.</p>
-        <p>Since it leads to a lot of human error, a UR5 is inculcated(Image Gallery) to reduce the human error and give more control to velocity.</p>
-      
-      <br>
-
-
-      <h1><b>IMAGE GALLERY</b></h1>     
-      <div class="dropdown-box">
-            <label for="mediaType">Choose media:</label>
-            <select id="mediaType" onchange="switchGallery()">
-              <option value="images">Images</option>
-              <option value="videos">Videos</option>
-            </select>
-                           
-           <div id="images" class="gallery gallery-section active">
-             <img src="force_setup.jpg" alt="Descriptive Image" onclick="openModal(this.src)">
-             <img src="ur5_fg.jpg" alt="Descriptive Image" onclick="openModal(this.src)">
-             <img src="bestfit.png" alt="Descriptive Image" onclick="openModal(this.src)">
-           </div>
-         
-           <div id="videos" class="gallery gallery-section">
-          <iframe 
-            width="400" 
-            height="400"
-            src="https://www.youtube.com/embed/WxmLll2VZsE" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
-        <iframe
-          width="400" 
-          height="400"
-          src="https://www.youtube.com/embed/wU4Gq8Kg_fg" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
-             <!-- Add more videos -->
-           </div>
-         
-           <!-- Modal -->
-           <div id="popupModal" class="modal" onclick="closeModal()">
-             <span class="close">&times;</span>
-             <div class="modal-content" id="modalContent"></div>
-           </div>
-         
-           <script>
-             function switchGallery() {
-               const selection = document.getElementById("mediaType").value;
-               document.querySelectorAll('.gallery-section').forEach(section => {
-                 section.classList.remove('active');
-               });
-               document.getElementById(selection).classList.add('active');
-             }
-         
-             function openModal(src) {
-               const modal = document.getElementById("popupModal");
-               const content = document.getElementById("modalContent");
-               content.innerHTML = "";
-         
-               const ext = src.split('.').pop().toLowerCase();
-               if (['mp4', 'webm', 'ogg'].includes(ext)) {
-                 const video = document.createElement("video");
-                 video.src = src;
-                 video.controls = true;
-                 video.autoplay = true;
-                 content.appendChild(video);
-               } else {
-                 const img = document.createElement("img");
-                 img.src = src;
-                 content.appendChild(img);
-               }
-         
-               modal.style.display = "flex";
-             }
-         
-             function closeModal() {
-               const modal = document.getElementById("popupModal");
-               modal.style.display = "none";
-             }
-         
-             // Optional: Close when clicking the '×'
-             document.querySelector(".close").onclick = closeModal;
-           </script>
-           </div>
-
-      <br>
-      
-      <h1><b>SOFTWARE CONFIGURATION/ROS2 ARCHITECTURE</b></h1>
-      
-      <p>The force gauge is connected to the system via serial communicator (USB provided by the manufacturer).</p>
-      <p>The force gauge in questions is a Mark-10 M4-10 force gauge. A USB serial communication is the way of networking to ROS2. It has a variable baud rate but we went with 9600.</p>
-       
-      <nav>
-        <a href="https://mark-10.com/products/force-gauges/series-4/#tab-1" target="_blank">Mark-10 Series 4 Force Gauge</a>
-      </nav>
-      <p>
-      In terms of ROS2 implementation, we we created a publisher and subscriber nodes.
-      <div class="justified-list-container"> 
-      <ul>
-        <li>
-          The publisher node will access the data from the serial communicator and publish a topic <code>\force_reading</code> which continuously updates the force reading from the force gauge.
-        </li>
-        <li>
-          The subscriber node subscribes to the topic and performs the following:
-          <ul>
-            <li>Visualizes graphically the force readings.</li>
-            <li>Creates a GUI to show the data with a button to start and stop recording.</li>
-            <li>Upon pressing the button, the GUI will automatically create a CSV and ros2bag file for post-processing.</li>
-          </ul>
-        </li>
-      </ul>
-      </div>
-    </p>    
-     
-        <br>
-      
-      <h1><b>INTERFACE AND AUTOMATION</b></h1>
-      
-      <p>The sensor data will be obtained using ROS2, and custom ROS2 nodes for real-time interaction. The experimentation result and automation will be influenced through:
-        
-        <div class="justified-list-container"> 
-        <ul>
-          <li><b>Vision-based Perception:</b> OptiTrack motion capture data will be fused to provide high-accuracy object localization.</li>
-          <li><b>Adaptive Motion Planning:</b> ROS2 will handle trajectory updates dynamically, allowing the robot to adjust its movements based on real-time feedback.</li>
-          <li><b>Automation:</b>For automation, we used a UR5 to automate the experimental setup to remove the possibiliity of human error and repeatability.Third point</li>
-        </ul>
-        </div>  
-      
-        To facilitate monitoring and user interaction, the following interfaces will be developed:
-        
-        <div class="justified-list-container">
-        <ul>
-          <li><b>Web-Based Dashboard:</b> A user-friendly interface displaying object tracking data, and force gauge readings.</li>
-          <li><b>Data Logging System:</b> All relevant data (object positions, timestamps, drop locations, and trajectory corrections) will be stored in a ROS 2-based database for post-experiment analysis.</li>
-          <li><b>UR5 Control:</b> Develop a path planning program for UR5 for movement which facilitates the experiments.</li>
-        </ul>
+        <div class="mermaid">
+          graph TD  
+            A[Project Setup] --> B[Define Experiment Parameters]  
+            B --> C[ROS2-Based Software Configuration]  
+            C --> D[Conduct Experiment]  
+            D --> E[Data Collection]  
+            E --> F[Analysis]  
+            F --> G{Iterate?}  
+            G -->|Yes| D  
+            G -->|No| H[Report Findings - find stiffness]
         </div>
-      </p>
-      
-      <br>
-      
-      <h1><b>CONTROL AND AUTONOMY</b></h1>
-      
-      <p><b>A low-latency feedback loop</b> will be established to provide real-time feedback to the UR5 controller where sensor data is processed and transmitted.
-        This enables the UR5 inverse kinematics and control algorithms to dynamically adjust grip strength and drop execution in real-time.</p>
-      <p><b>A High-Level decision-making</b> module will also read long-term trends from sensor feedback to make higher-level decisions.</p>
-      
-      <br>
-  
-      <h1><b>RESOURCES NEEDED</b></h1>
-      
-      <p>Since we heavily require camera sensing and sensor fusion, we would be needing knowledge about Control Systems and Autonomous Algorithms, Computer Vision, Object tracking and Sensor Fusion and Filtering Techniques.
-        Furthemore, self study and expert advice will go a long way in covering the gaps.</p>
-      <br>
-  
-      <p><b>Changes in environmental conditions</b>
+      </section>
+
+      <section>
+        <h1>EXPERIMENTATION WORKFLOW</h1>
         
-        <div class="justified-list-container">
+        <h2>Project Setup:</h2>
+        <p>The setup contains a prototype of an ankle + leg of a quadruped, similar to a pogo stick model, with a Force Gauge ready to record data.</p>
+
+        <h2>Define Experiment Parameters:</h2>
+        <p>The model is fixed to the ground and attached via string to the hook of the force gauge. Displacement points are marked, and force readings are taken to plot and fit the stiffness curve.</p>
+
+        <h2>ROS2-Based Software Configuration:</h2>
+        <p>The force readings are handled via ROS2 and visualized in a GUI built with PyQT5. The GUI includes:</p>
         <ul>
-          <li>To handle variability in the environment, 
-            the robot will leverage sensor fusion by combining OptiTrack motion capture for global positioning and force gauge for precise local object tracking, 
-            ensuring robust localization and more research data.</li>
-          <li>In case of misalignment, 
-            the system will implement error recovery strategies, such as reattempting detection and adjusting the pick position.
-            Additionally, ROS 2-based dynamic reconfiguration will allow real-time parameter tuning and trajectory modifications, supported by a web-based interface for manual overrides. This integrated approach ensures the system remains resilient and adaptable in dynamic environments, 
-            maintaining precise and reliable object manipulation.</li>
+          <li>2D plot of force vs. time</li>
+          <li>Buttons to start/stop recording</li>
+          <li>CSV or ROS2 bag file export of data</li>
         </ul>
+
+        <h2>Conduct Experiment:</h2>
+        <p>Tensile force is applied manually or using a UR5 arm. Force gauge records readings across varying displacement and velocity to determine stiffness and damping.</p>
+
+        <h2>Data Collection:</h2>
+        <p>A best-fit line is computed from the collected data to determine stiffness (force vs. displacement) and damping (force vs. velocity).</p>
+
+        <p><em>Data will be collected and iterated across varying parameters.</em></p>
+      </section>
+
+      <section>
+        <h1>HARDWARE CONFIGURATION</h1>
+        <p>The specimen is secured on the ground and connected to the Force Gauge using a string. Tensile forces are applied, and the force is recorded through multiple displacement markers.</p>
+        <p>Initial testing was done manually, but to improve accuracy and repeatability, a UR5 robotic arm is now used.</p>
+      </section>
+
+      <section>
+        <h1>SOFTWARE CONFIGURATION / ROS2 ARCHITECTURE</h1>
+        <p>The Mark-10 M4-10 force gauge communicates with the system via USB serial (baud rate: 9600).</p>
+
+        <nav>
+          <a href="https://mark-10.com/products/force-gauges/series-4/#tab-1" target="_blank">Mark-10 Series 4 Force Gauge</a>
+        </nav>
+
+        <ul>
+          <li>
+            <strong>Publisher node:</strong> Reads data via serial and publishes it to <code>/force_reading</code>.
+          </li>
+          <li>
+            <strong>Subscriber node:</strong>
+            <ul>
+              <li>Visualizes the data in real-time</li>
+              <li>GUI with buttons for recording control</li>
+              <li>Automatically saves CSV and ros2bag files</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h1>INTERFACE AND AUTOMATION</h1>
+        <ul>
+          <li><strong>Vision-based Perception:</strong> OptiTrack motion capture for object localization.</li>
+          <li><strong>Adaptive Motion Planning:</strong> Real-time trajectory updates via ROS2.</li>
+          <li><strong>Automation:</strong> UR5 replaces manual force application for precision and repeatability.</li>
+        </ul>
+
+        <p>Interfaces developed:</p>
+        <ul>
+          <li><strong>Web-Based Dashboard:</strong> Displays object tracking and force readings.</li>
+          <li><strong>Data Logging System:</strong> ROS2 database logs all key data points.</li>
+          <li><strong>UR5 Control:</strong> Custom UR5 path planner facilitates experiment automation.</li>
+        </ul>
+      </section>
+
+      <section>
+        <div style="text-align: center;">
+          <img src="rosgraph.jpg" alt="ROS2 rqt_graph" class="popup-image">
+          <p style="margin-top: 10px;">The rqt_graph of the ROS2 architecture.</p>
         </div>
-      
-      </p>
-  
-      <br>
-  
-      <h1><b>IMPACT</b></h1>
-      <p>Our team has no prior experience with ROS2, sensor fusion, or object detection, making this a valuable challenge for us to advance in robotic experimentation. We are focused on developing a robust and standalone test procedure for dropping test materials from a height.
-        This process can be applied to material testing, orientation-based drop tests, 
-        impact conditioning, and assessing real-world behavior under critical conditions. Such a testing framework could significantly enhance rescue operations by evaluating the impact on a robot when deployed from higher floors, 
-        such as the 4th or 5th, ensuring better reliability in high-stakes scenarios.</p>
-      
-      <br>
-      
-      <h1><b>ADVISING</b></h1>
-      <p>We will be mentored by Dr. Daniel M. Aukes, who has expressed his interest in providing mentoring and access to state-of-the-art hardware facilities. 
-        Dr. Aukes' guidance will be a key factor in ensuring the technical aspects of the project are addressed effectively. His demands involve regular progress tracking, strict adherence to project milestones, and active participation in troubleshooting sessions. 
-        Other facilities, such as laboratory access and state-of-the-art simulation tools, have been guaranteed to aid in our experimental setup. </p>
-      
-      <br>
-      
-      <h1><b>TIMELINE(RECENTLY UPDATED)</b></h1>
-      
-      <div style="text-align: center;">
-        <img src="new_timeline.jpg" alt="Timeline" class="popup-image">
-      </div>
-      
-  
-      <br>
-  
+      </section>
+
+      <section>
+        <h1>CONTROL AND AUTONOMY</h1>
+        <p><strong>Low-latency feedback loop:</strong> Enables real-time force updates for UR5 control.</p>
+        <p><strong>High-level decision-making:</strong> Uses trends from feedback for automated adaptation.</p>
+      </section>
+
+      <section>
+        <h1>RESOURCES NEEDED</h1>
+        <p>Knowledge areas required include control systems, computer vision, object tracking, and sensor fusion. Guidance from experts and self-study are critical.</p>
+
+        <h2>Environmental Challenges</h2>
+        <ul>
+          <li>Sensor fusion via OptiTrack and force gauge for robust tracking.</li>
+          <li>Error recovery strategies for misalignment and real-time dynamic reconfiguration via ROS2.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h1>IMPACT</h1>
+        <p>This project offers valuable experience in ROS2, sensor fusion, and robotics. The resulting test system can be used for drop impact testing, aiding applications in rescue operations and material durability assessment.</p>
+      </section>
+
+      <section>
+        <h1>ADVISING</h1>
+        <p>Mentored by Dr. Daniel M. Aukes, who will oversee progress, provide technical feedback, and grant lab access. Regular milestones and reviews are mandatory.</p>
+      </section>
+
+      <section>
+        <h1>IMAGE GALLERY</h1>
+
+        <div class="dropdown-box">
+          <label for="mediaType">Choose media:</label>
+          <select id="mediaType" onchange="switchGallery()">
+            <option value="images">Images</option>
+            <option value="videos">Videos</option>
+          </select>
+
+          <div id="images" class="gallery gallery-section active">
+            <img src="force_setup.jpg" alt="Force Setup" onclick="openModal(this.src)">
+            <img src="ur5_fg.jpg" alt="UR5 Setup" onclick="openModal(this.src)">
+            <img src="bestfit.png" alt="Best Fit Graph" onclick="openModal(this.src)">
+            <img src="rosgraph.jpg" alt="ROS Graph" onclick="openModal(this.src)">
+          </div>
+
+          <div id="videos" class="gallery gallery-section">
+            <iframe width="400" height="400" src="https://www.youtube.com/embed/WxmLll2VZsE" frameborder="0" allowfullscreen></iframe>
+            <iframe width="400" height="400" src="https://www.youtube.com/embed/wU4Gq8Kg_fg" frameborder="0" allowfullscreen></iframe>
+          </div>
+
+          <div id="popupModal" class="modal" onclick="closeModal()">
+            <span class="close">&times;</span>
+            <div class="modal-content" id="modalContent"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const video = document.getElementById("introVideo");
+    const videoContainer = document.getElementById("videoContainer");
+    const mainContent = document.getElementById("mainContent");
+
+    video.onended = () => {
+      videoContainer.style.display = "none";
+      mainContent.style.display = "block";
+      document.body.style.overflow = "auto"; // Enable scrolling
+    };
+    function switchGallery() {
+      const selection = document.getElementById("mediaType").value;
+      document.querySelectorAll('.gallery-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(selection).classList.add('active');
+    }
+
+    function openModal(src) {
+      const modal = document.getElementById("popupModal");
+      const content = document.getElementById("modalContent");
+      content.innerHTML = "";
+
+      const ext = src.split('.').pop().toLowerCase();
+      if (['mp4', 'webm', 'ogg'].includes(ext)) {
+        const video = document.createElement("video");
+        video.src = src;
+        video.controls = true;
+        video.autoplay = true;
+        content.appendChild(video);
+      } else {
+        const img = document.createElement("img");
+        img.src = src;
+        content.appendChild(img);
+      }
+
+      modal.style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("popupModal").style.display = "none";
+    }
+
+    document.querySelector(".close").onclick = closeModal;
+  </script>
+</body>
