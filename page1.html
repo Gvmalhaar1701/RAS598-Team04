@@ -103,8 +103,11 @@
     }
 
     ul li {
-    text-align: justify;
-    max-width: 800px;  /* Optional: control line width */
+      text-align: justify;
+      margin: 0 auto;
+      width: 80%; /* Adjust width as needed */
+      padding: 10px;
+      line-height: 1.6;
     }
     main {
       padding: 20px;
@@ -398,14 +401,22 @@
         <a href="https://mark-10.com/products/force-gauges/series-4/#tab-1" target="_blank">Mark-10 Series 4 Force Gauge</a>
       </nav>
       In terms of ROS2 implementation, we we created a publisher and subscriber nodes.
-        <ul>
-          <li>The publisher node will access the data from the serial communicator and publish a topic '\force_reading' which continuously updates the force reading from the force gauge.</li>
-          <li>The subscriber node subscribes the topic and performs the following:</li>
-        </ul>
-        1. Visualizes graphically the force readings.
-        2. Create a GUI and show the data, have a button to start and stop recording.
-        3. Upon pressing the button, the GUI will automatically create a csv and ros2bag file, useful for post-processing.
-      <br>
+      <ul>
+        <li>
+          The publisher node will access the data from the serial communicator and publish a topic <code>\force_reading</code> which continuously updates the force reading from the force gauge.
+        </li>
+        <li>
+          The subscriber node subscribes to the topic and performs the following:
+          <ul>
+            <li>Visualizes graphically the force readings.</li>
+            <li>Creates a GUI to show the data with a button to start and stop recording.</li>
+            <li>Upon pressing the button, the GUI will automatically create a CSV and ros2bag file for post-processing.</li>
+          </ul>
+        </li>
+      </ul>
+          
+     
+        <br>
       
       <h1><b>INTERFACE AND AUTOMATION</b></h1>
       
