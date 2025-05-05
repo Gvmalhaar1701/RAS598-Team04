@@ -322,13 +322,17 @@
            </div>
          
            <div id="videos" class="gallery gallery-section">
-            <iframe 
+          <iframe 
+            width="400" 
+            height="400"
             src="https://www.youtube.com/embed/WxmLll2VZsE" 
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen>
           </iframe>
-          <iframe 
+        <iframe
+          width="400" 
+          height="400"
           src="https://www.youtube.com/embed/wU4Gq8Kg_fg" 
           frameborder="0" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -383,22 +387,16 @@
            </script>
            </div>
 
-      
-      
-      <p>The project involves using two setups:
-  
-        1. OptiTrack via ROS2 to drop test objects at predetermined positions. A vision system, will record drop points and trajectories
-        2. A force gauge is attached to the test object to measure the stiffness and deformation. The setup will fixate the test object to the ground and force will be measured at different displacements and velocities which forms data to find the best fit for the stiffness and damping of the prototype
-        
-        The experiment analyzes how factors such as object weight and shape influence it and how it relates to the simulation readings. ROS2 software will use a node to publish the sensors to ensure repeatability in the experiment. The process flow chart of our project is shown in the chart below. </p>
-      
       <br>
       
-      <h1><b>SENSOR INTEGRATION</b></h1>
+      <h1><b>SOFTWARE CONFIGURATION/ROS2 ARCHITECTURE</b></h1>
       
-      <p>This project aims to develop a ROS 2-based robotic manipulation system that integrates OptiTrack motion capture technology , and force gauge for measuring simulation parameters. 
-        The goal is to drop them from a random height and angle and utilize the OptiTrack and find the projected trajectories. ROS2 will be used for processing and obtaining sensor information and real-time communication, ensuring seamless coordination between different sensor data. This experiment will help in supporting the simulation data of a similar model in MujoCo.
-        The OptiTrack motion capture system will provide for improved tracking. By leveraging ROS 2’s distributed architecture, this project will enhance trajectory adaptation in real-time. The combination of motion capture (OptiTrack) will enable high-accuracy object handling. The findings from this experiment will have broader applications in industrial automation, assistive robotics, and testing.</p>
+      <p>The force gauge is connected to the system via serial communicator (USB provided by the manufacturer).</p>
+      <p>The force gauge in questions is a Mark-10 M4-10 force gauge. A USB serial communication is the way of networking to ROS2. It has a variable baud rate but we went with 9600.</p>
+       
+      <nav>
+        <a href="https://mark-10.com/products/force-gauges/series-4/#tab-1" target="_blank">Mark-10 Series 4 Force Gauge</a>
+      </nav>
       
       <br>
       
