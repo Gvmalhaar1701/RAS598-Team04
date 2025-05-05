@@ -271,14 +271,7 @@
               <option value="images">Images</option>
               <option value="videos">Videos</option>
             </select>
-          </div>
-          
-           <label for="mediaType">Choose media:</label>
-           <select id="mediaType" onchange="switchGallery()">
-             <option value="images">Images</option>
-             <option value="videos">Videos</option>
-           </select>
-         
+                           
            <div id="images" class="gallery gallery-section active">
              <img src="image1.jpg" alt="Image 1" onclick="openModal(this.src)">
              <img src="image2.jpg" alt="Image 2" onclick="openModal(this.src)">
@@ -335,6 +328,7 @@
              // Optional: Close when clicking the '×'
              document.querySelector(".close").onclick = closeModal;
            </script>
+           </div>
 
       
       
