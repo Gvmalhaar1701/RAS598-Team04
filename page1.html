@@ -8,36 +8,11 @@
     mermaid.initialize({ startOnLoad: true });
   </script>
   <style>
-    main {
-      text-align: center;     /* Center-align the text */
-      padding: 20px;          /* Add some space inside the main block */
-    }
-
-    p {
-      text-align: justify;     /* Align text inside paragraph to the left */
-      padding-left: 60px;
-      padding-right: 60px;   /* Indent the entire paragraph */
-      max-width: 800px;
-      margin: 0 auto;   
-    }
-
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       background: #f9f9f9;
       color: #333;
-    }
-    h2 {
-    font-size: 1.8em;
-    font-style: italic;
-  }
-  .mermaid {
-      max-width: 80%;
-      margin: auto;
-      background: white;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     header {
@@ -46,16 +21,43 @@
       padding: 20px;
       text-align: center;
     }
-    
+
     h1, p {
       text-align: center;
       margin: 20px auto;
     }
 
+    h2 {
+      font-size: 1.8em;
+      font-style: italic;
+    }
+
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+
+    p {
+      text-align: justify;
+      padding-left: 60px;
+      padding-right: 60px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .mermaid {
+      max-width: 80%;
+      margin: auto;
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
     table {
-      margin-left: auto;  /* Auto left margin */
-      margin-right: auto; /* Auto right margin */
-      border-collapse: seperate;
+      margin-left: auto;
+      margin-right: auto;
+      border-collapse: separate;
       border-spacing: 0;
       border: 2px solid #8c1d40;
       border-radius: 15px;
@@ -66,20 +68,23 @@
       padding: 10px;
       text-align: center;
     }
-    
+
     .justified-list-container {
-      max-width: 800px;         /* Set the width of the list block */
-      margin: 0 auto;           /* Center the block horizontally */
-      text-align: justify;      /* Justify the text inside */
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: justify;
     }
 
     .justified-list-container ul {
-      padding-left: 20px;       /* Keeps bullets nicely spaced */
+      padding-left: 20px;
     }
 
-    .justified-list-container li {
+    .justified-list-container li,
+    ul li {
       margin-bottom: 10px;
-    }  
+      text-align: justify;
+    }
+
     nav {
       background: #fff;
       padding: 10px;
@@ -88,26 +93,16 @@
 
     nav a {
       display: inline-block;
-      background-color: #8c1d40;  /* Green background */
-      color: white;               /* White text */
-      padding: 10px 20px;         /* Space around text */
-      border-radius: 20px;        /* Curved corners */
-      text-decoration: none;      /* Remove underline */
+      background-color: #8c1d40;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      text-decoration: none;
       font-family: sans-serif;
     }
 
-    
     nav a:hover {
       background-color: #000;
-    }
-
-    ul li {
-      text-align: justify;
-      margin: 0 auto;
-    }
-    main {
-      padding: 20px;
-      text-align: center;
     }
 
     select {
@@ -142,8 +137,7 @@
     .gallery-section.active {
       display: flex;
     }
-    
-    /* Modal */
+
     .modal {
       display: none;
       position: fixed;
@@ -180,44 +174,12 @@
     }
 
     .dropdown-box {
-        display: inline-block;
-        background-color: #FFC627;
-        padding: 15px 20px;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        margin-bottom: 20px;
-    }
-
-    .tooltip-container {
-      position: relative;
       display: inline-block;
-      cursor: pointer;
-    }
-
-    .tooltip-container img {
-      width: 300px;
-      border-radius: 10px;
-    }
-
-    .tooltip-text {
-      visibility: hidden;
-      background-color: rgba(0, 0, 0, 0.75);
-      color: #fff;
-      text-align: center;
-      padding: 8px;
-      border-radius: 6px;
-      position: absolute;
-      bottom: 110%;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      transition: opacity 0.3s;
-      white-space: nowrap;
-    }
-
-    .tooltip-container:hover .tooltip-text {
-      visibility: visible;
-      opacity: 1;
+      background-color: #FFC627;
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      margin-bottom: 20px;
     }
 
     .popup-image {
@@ -225,12 +187,12 @@
       margin: 0 auto;
       width: 800px;
       height: auto;
-      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scale and shadow */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .popup-image:hover {
-      transform: scale(1.1); /* Pop-out effect */
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Optional shadow */
+      transform: scale(1.1);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     }
 
     a {
@@ -245,140 +207,136 @@
       padding: 15px;
       margin-top: 40px;
     }
-
-
-  
   </style>
 </head>
 
 <body>
   <header>
-      <h1>RAS598: TEAM-04</h1>
-      <p>STIFFNESS MEASUREMENT USING FORCE GAUGE</p>
+    <h1>RAS598: TEAM-04</h1>
+    <p>STIFFNESS MEASUREMENT USING FORCE GAUGE</p>
   </header>
 
-    <main>
+  <main>
       
-        <h1>SCOPE</h1>
-        <p>The stiffness of the ankle in the pogo stick-type model is characterized through 
-          a separate controlled experiment using a force-displacement test setup. 
-          This setup is designed to apply loads to the ankle joint and measure the corresponding force,
-          allowing the identification of accurate force-displacement points.
-        </p>
+    <h1>SCOPE</h1>
+    <p>The stiffness of the ankle in the pogo stick-type model is characterized through 
+      a separate controlled experiment using a force-displacement test setup. 
+      This setup is designed to apply loads to the ankle joint and measure the corresponding force,
+      allowing the identification of accurate force-displacement points.
+    </p>
 
-        <div class="mermaid">
-          graph TD  
-            A[Project Setup] --> B[Define Experiment Parameters]  
-            B --> C[ROS2-Based Software Configuration]  
-            C --> D[Conduct Experiment]  
-            D --> E[Data Collection]  
-            E --> F[Analysis]  
-            F --> G{Iterate?}  
-            G -->|Yes| D  
-            G -->|No| H[Report Findings - find stiffness]
-        </div>
+    <div class="mermaid">
+      graph TD  
+        A[Project Setup] --> B[Define Experiment Parameters]  
+        B --> C[ROS2-Based Software Configuration]  
+        C --> D[Conduct Experiment]  
+        D --> E[Data Collection]  
+        E --> F[Analysis]  
+        F --> G{Iterate?}  
+        G -->|Yes| D  
+        G -->|No| H[Report Findings - find stiffness]
+    </div>
 
-      <br>
-      
-        <h1>EXPERIMENTATION WORKFLOW</h1>
-        
-        <h2>Project Setup:</h2>
-        <p>The setup contains a prototype of an ankle + leg of a quadruped, similar to a pogo stick model, with a Force Gauge ready to record data.</p>
-
-        <h2>Define Experiment Parameters:</h2>
-        <p>The model is fixed to the ground and attached via string to the hook of the force gauge. Displacement points are marked, and force readings are taken to plot and fit the stiffness curve.</p>
-
-        <h2>ROS2-Based Software Configuration:</h2>
-        <p>The force readings are handled via ROS2 and visualized in a GUI built with PyQT5. The GUI includes:</p>
-        <ul>
-          <li>2D plot of force vs. time</li>
-          <li>Buttons to start/stop recording</li>
-          <li>CSV or ROS2 bag file export of data</li>
-        </ul>
-
-        <h2>Conduct Experiment:</h2>
-        <p>Tensile force is applied manually or using a UR5 arm. Force gauge records readings across varying displacement and velocity to determine stiffness and damping.</p>
-
-        <h2>Data Collection:</h2>
-        <p>A best-fit line is computed from the collected data to determine stiffness (force vs. displacement) and damping (force vs. velocity).</p>
-
-        <p><em>Data will be collected and iterated across varying parameters.</em></p>
-      
-      <br>
-      
-        <h1>HARDWARE CONFIGURATION</h1>
-        <p>The specimen is secured on the ground and connected to the Force Gauge using a string. Tensile forces are applied, and the force is recorded through multiple displacement markers.</p>
-        <p>Initial testing was done manually, but to improve accuracy and repeatability, a UR5 robotic arm is now used.</p>
-      
-      <br>
-
-     
-        <h1>SOFTWARE CONFIGURATION / ROS2 ARCHITECTURE</h1>
-        <p>The Mark-10 M4-10 force gauge communicates with the system via USB serial (baud rate: 9600).</p>
-
-        <nav>
-          <a href="https://mark-10.com/products/force-gauges/series-4/#tab-1" target="_blank">Mark-10 Series 4 Force Gauge</a>
-        </nav>
-
-        <ul>
-          <li>
-            <strong>Publisher node:</strong> Reads data via serial and publishes it to <code>/force_reading</code>.
-          </li>
-          <li>
-            <strong>Subscriber node:</strong>
-            <ul>
-              <li>Visualizes the data in real-time</li>
-              <li>GUI with buttons for recording control</li>
-              <li>Automatically saves CSV and ros2bag files</li>
-            </ul>
-          </li>
-        </ul>
-        
-        <br>
-        
-        <div style="text-align: center;">
-          <img src="rosgraph.jpg" alt="ROS2 rqt_graph" class="popup-image">
-          <p style="margin-top: 10px;">The rqt_graph of the ROS2 architecture.</p>
-        </div>
-        
-      <br>
-
-        <h1>DATA COLLECTION</h1>
-        <h2>STIFFNESS</h2>
-        <p>(Check Image Gallery) shows two situations of physically pulling the Force Gauge and finding the best fit line. As seen in the results, the results are varying different counting for human error 
-        and lack of data points. But the closeness of the values validate the repeatability of the setup.</p> 
-
-
-      <br>
-      
-      <h1>IMAGE GALLERY</h1>
-
-        <div class="dropdown-box">
-          <label for="mediaType">Choose media:</label>
-          <select id="mediaType" onchange="switchGallery()">
-            <option value="images">Images</option>
-            <option value="videos">Videos</option>
-          </select>
-
-          <div id="images" class="gallery gallery-section active">
-            <img src="force_setup.jpg" alt="Force Setup" onclick="openModal(this.src)">
-            <img src="ur5_fg.jpg" alt="UR5 Setup" onclick="openModal(this.src)">
-            <img src="bestfit.png" alt="Best Fit Graph" onclick="openModal(this.src)">
-            <img src="rosgraph.jpg" alt="ROS Graph" onclick="openModal(this.src)">
-          </div>
-
-          <div id="videos" class="gallery gallery-section">
-            <iframe width="400" height="400" src="https://www.youtube.com/embed/WxmLll2VZsE" frameborder="0" allowfullscreen></iframe>
-            <iframe width="400" height="400" src="https://www.youtube.com/embed/wU4Gq8Kg_fg" frameborder="0" allowfullscreen></iframe>
-          </div>
-
-          <div id="popupModal" class="modal" onclick="closeModal()">
-            <span class="close">&times;</span>
-            <div class="modal-content" id="modalContent"></div>
-          </div>
-        </div>
-    </main>
+  <br>
   
+    <h1>EXPERIMENTATION WORKFLOW</h1>
+    
+    <h2>Project Setup:</h2>
+    <p>The setup contains a prototype of an ankle + leg of a quadruped, similar to a pogo stick model, with a Force Gauge ready to record data.</p>
+
+    <h2>Define Experiment Parameters:</h2>
+    <p>The model is fixed to the ground and attached via string to the hook of the force gauge. Displacement points are marked, and force readings are taken to plot and fit the stiffness curve.</p>
+
+    <h2>ROS2-Based Software Configuration:</h2>
+    <p>The force readings are handled via ROS2 and visualized in a GUI built with PyQT5. The GUI includes:</p>
+    <ul>
+      <li>2D plot of force vs. time</li>
+      <li>Buttons to start/stop recording</li>
+      <li>CSV or ROS2 bag file export of data</li>
+    </ul>
+
+    <h2>Conduct Experiment:</h2>
+    <p>Tensile force is applied manually or using a UR5 arm. Force gauge records readings across varying displacement and velocity to determine stiffness and damping.</p>
+
+    <h2>Data Collection:</h2>
+    <p>A best-fit line is computed from the collected data to determine stiffness (force vs. displacement) and damping (force vs. velocity).</p>
+
+    <p><em>Data will be collected and iterated across varying parameters.</em></p>
+  
+  <br>
+  
+    <h1>HARDWARE CONFIGURATION</h1>
+    <p>The specimen is secured on the ground and connected to the Force Gauge using a string. Tensile forces are applied, and the force is recorded through multiple displacement markers.</p>
+    <p>Initial testing was done manually, but to improve accuracy and repeatability, a UR5 robotic arm is now used.</p>
+  
+  <br>
+
+ 
+    <h1>SOFTWARE CONFIGURATION / ROS2 ARCHITECTURE</h1>
+    <p>The Mark-10 M4-10 force gauge communicates with the system via USB serial (baud rate: 9600).</p>
+
+    <nav>
+      <a href="https://mark-10.com/products/force-gauges/series-4/#tab-1" target="_blank">Mark-10 Series 4 Force Gauge</a>
+    </nav>
+
+    <ul>
+      <li>
+        <strong>Publisher node:</strong> Reads data via serial and publishes it to <code>/force_reading</code>.
+      </li>
+      <li>
+        <strong>Subscriber node:</strong>
+        <ul>
+          <li>Visualizes the data in real-time</li>
+          <li>GUI with buttons for recording control</li>
+          <li>Automatically saves CSV and ros2bag files</li>
+        </ul>
+      </li>
+    </ul>
+    
+    <br>
+    
+    <div style="text-align: center;">
+      <img src="rosgraph.jpg" alt="ROS2 rqt_graph" class="popup-image">
+      <p style="margin-top: 10px;">The rqt_graph of the ROS2 architecture.</p>
+    </div>
+    
+  <br>
+
+    <h1>DATA COLLECTION</h1>
+    <h2>STIFFNESS</h2>
+    <p>(Check Image Gallery) shows two situations of physically pulling the Force Gauge and finding the best fit line. As seen in the results, the results are varying different counting for human error 
+    and lack of data points. But the closeness of the values validate the repeatability of the setup.</p> 
+
+
+  <br>
+  
+  <h1>IMAGE GALLERY</h1>
+
+    <div class="dropdown-box">
+      <label for="mediaType">Choose media:</label>
+      <select id="mediaType" onchange="switchGallery()">
+        <option value="images">Images</option>
+        <option value="videos">Videos</option>
+      </select>
+
+      <div id="images" class="gallery gallery-section active">
+        <img src="force_setup.jpg" alt="Force Setup" onclick="openModal(this.src)">
+        <img src="ur5_fg.jpg" alt="UR5 Setup" onclick="openModal(this.src)">
+        <img src="bestfit.png" alt="Best Fit Graph" onclick="openModal(this.src)">
+        <img src="rosgraph.jpg" alt="ROS Graph" onclick="openModal(this.src)">
+      </div>
+
+      <div id="videos" class="gallery gallery-section">
+        <iframe width="400" height="400" src="https://www.youtube.com/embed/WxmLll2VZsE" frameborder="0" allowfullscreen></iframe>
+        <iframe width="400" height="400" src="https://www.youtube.com/embed/wU4Gq8Kg_fg" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div id="popupModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <div class="modal-content" id="modalContent"></div>
+      </div>
+    </div>
+</main>
 
   <script>
     function switchGallery() {
@@ -417,3 +375,4 @@
     document.querySelector(".close").onclick = closeModal;
   </script>
 </body>
+</html>
