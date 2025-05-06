@@ -249,11 +249,14 @@
 
     <h2>ROS2-Based Software Configuration:</h2>
     <p>The force readings are handled via ROS2 and visualized in a GUI built with PyQT5. The GUI includes:</p>
+    
+    <div class="justified-list-container">
     <ul>
       <li>2D plot of force vs. time</li>
       <li>Buttons to start/stop recording</li>
       <li>CSV or ROS2 bag file export of data</li>
     </ul>
+    </div>
 
     <h2>Conduct Experiment:</h2>
     <p>Tensile force is applied manually or using a UR5 arm. Force gauge records readings across varying displacement and velocity to determine stiffness and damping.</p>
@@ -279,6 +282,7 @@
       <a href="https://mark-10.com/products/force-gauges/series-4/#tab-1" target="_blank">Mark-10 Series 4 Force Gauge</a>
     </nav>
 
+    <div class = "justified-list-container">
     <ul>
       <li>
         <strong>Publisher node:</strong> Reads data via serial and publishes it to <code>/force_reading</code>.
@@ -292,6 +296,7 @@
         </ul>
       </li>
     </ul>
+  </div>
     
     <br>
     
