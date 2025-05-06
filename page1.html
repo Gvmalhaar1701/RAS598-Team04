@@ -321,7 +321,14 @@
   <br>
 
   <h1><b>CONCLUSION</b></h1>
-  <h1>IMAGE GALLERY</h1>
+  <p>We devised an experimental setup which will calculates the stiffness and damping. We used serial communications and ROS2 to obtain the force data and plot it and record it using a simple 
+    PyQT5 GUI. We also used a UR5 to control velocities and displacements. Main problems encountered were setting up the right coordinates in the UR5. Further improvement could be possible by integrating an OptiTrack to plot displacement
+    and velocity data and get a stiffness curve directly.  
+  </p>
+
+  <br>
+
+  <h1><b>IMAGE GALLERY</b></h1>
 
     <div class="dropdown-box">
       <label for="mediaType">Choose media:</label>
@@ -352,13 +359,7 @@
 
 
 </main>
-
- 
- 
- 
- 
- 
- <script>
+<script>
     function switchGallery() {
       const selection = document.getElementById("mediaType").value;
       document.querySelectorAll('.gallery-section').forEach(section => {
