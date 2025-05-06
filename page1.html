@@ -47,7 +47,7 @@
       text-align: center;
     }
     
-    header h1, p {
+    h1, p {
       text-align: center;
       margin: 20px auto;
     }
@@ -101,7 +101,7 @@
       background-color: #000;
     }
 
-    ul li {
+    section ul li {
       text-align: justify;
       margin: 0 auto;
     }
@@ -258,6 +258,7 @@
   </header>
 
     <main>
+      
       <section>
         <h1>SCOPE</h1>
         <p>The stiffness of the ankle in the pogo stick-type model is characterized through 
@@ -335,27 +336,20 @@
       </section>
 
       <section>
-        <h1>INTERFACE AND AUTOMATION</h1>
-        <ul>
-          <li><strong>Vision-based Perception:</strong> OptiTrack motion capture for object localization.</li>
-          <li><strong>Adaptive Motion Planning:</strong> Real-time trajectory updates via ROS2.</li>
-          <li><strong>Automation:</strong> UR5 replaces manual force application for precision and repeatability.</li>
-        </ul>
-
-        <p>Interfaces developed:</p>
-        <ul>
-          <li><strong>Web-Based Dashboard:</strong> Displays object tracking and force readings.</li>
-          <li><strong>Data Logging System:</strong> ROS2 database logs all key data points.</li>
-          <li><strong>UR5 Control:</strong> Custom UR5 path planner facilitates experiment automation.</li>
-        </ul>
-      </section>
-
-      <section>
         <div style="text-align: center;">
           <img src="rosgraph.jpg" alt="ROS2 rqt_graph" class="popup-image">
           <p style="margin-top: 10px;">The rqt_graph of the ROS2 architecture.</p>
         </div>
       </section>
+
+      <section>
+        <h1>DATA COLLECTION</h1>
+        <h2>STIFFNESS</h2>
+        <p>(Check Image Gallery) shows two situations of physically pulling the Force Gauge and finding the best fit line. As seen in the results, the results are varying different counting for human error 
+        and lack of data points. But the closeness of the values validate the repeatability of the setup.</p> 
+      </section>
+
+
 
       <section>
         <h1>CONTROL AND AUTONOMY</h1>
