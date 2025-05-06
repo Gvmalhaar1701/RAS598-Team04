@@ -101,7 +101,7 @@
       background-color: #000;
     }
 
-    section ul li {
+    ul li {
       text-align: justify;
       margin: 0 auto;
     }
@@ -259,7 +259,6 @@
 
     <main>
       
-      <section>
         <h1>SCOPE</h1>
         <p>The stiffness of the ankle in the pogo stick-type model is characterized through 
           a separate controlled experiment using a force-displacement test setup. 
@@ -278,9 +277,9 @@
             G -->|Yes| D  
             G -->|No| H[Report Findings - find stiffness]
         </div>
-      </section>
 
-      <section>
+      <br>
+      
         <h1>EXPERIMENTATION WORKFLOW</h1>
         
         <h2>Project Setup:</h2>
@@ -304,15 +303,16 @@
         <p>A best-fit line is computed from the collected data to determine stiffness (force vs. displacement) and damping (force vs. velocity).</p>
 
         <p><em>Data will be collected and iterated across varying parameters.</em></p>
-      </section>
-
-      <section>
+      
+      <br>
+      
         <h1>HARDWARE CONFIGURATION</h1>
         <p>The specimen is secured on the ground and connected to the Force Gauge using a string. Tensile forces are applied, and the force is recorded through multiple displacement markers.</p>
         <p>Initial testing was done manually, but to improve accuracy and repeatability, a UR5 robotic arm is now used.</p>
-      </section>
+      
+      <br>
 
-      <section>
+     
         <h1>SOFTWARE CONFIGURATION / ROS2 ARCHITECTURE</h1>
         <p>The Mark-10 M4-10 force gauge communicates with the system via USB serial (baud rate: 9600).</p>
 
@@ -333,53 +333,25 @@
             </ul>
           </li>
         </ul>
-      </section>
-
-      <section>
+        
+        <br>
+        
         <div style="text-align: center;">
           <img src="rosgraph.jpg" alt="ROS2 rqt_graph" class="popup-image">
           <p style="margin-top: 10px;">The rqt_graph of the ROS2 architecture.</p>
         </div>
-      </section>
+        
+      <br>
 
-      <section>
         <h1>DATA COLLECTION</h1>
         <h2>STIFFNESS</h2>
         <p>(Check Image Gallery) shows two situations of physically pulling the Force Gauge and finding the best fit line. As seen in the results, the results are varying different counting for human error 
         and lack of data points. But the closeness of the values validate the repeatability of the setup.</p> 
-      </section>
 
 
-
-      <section>
-        <h1>CONTROL AND AUTONOMY</h1>
-        <p><strong>Low-latency feedback loop:</strong> Enables real-time force updates for UR5 control.</p>
-        <p><strong>High-level decision-making:</strong> Uses trends from feedback for automated adaptation.</p>
-      </section>
-
-      <section>
-        <h1>RESOURCES NEEDED</h1>
-        <p>Knowledge areas required include control systems, computer vision, object tracking, and sensor fusion. Guidance from experts and self-study are critical.</p>
-
-        <h2>Environmental Challenges</h2>
-        <ul>
-          <li>Sensor fusion via OptiTrack and force gauge for robust tracking.</li>
-          <li>Error recovery strategies for misalignment and real-time dynamic reconfiguration via ROS2.</li>
-        </ul>
-      </section>
-
-      <section>
-        <h1>IMPACT</h1>
-        <p>This project offers valuable experience in ROS2, sensor fusion, and robotics. The resulting test system can be used for drop impact testing, aiding applications in rescue operations and material durability assessment.</p>
-      </section>
-
-      <section>
-        <h1>ADVISING</h1>
-        <p>Mentored by Dr. Daniel M. Aukes, who will oversee progress, provide technical feedback, and grant lab access. Regular milestones and reviews are mandatory.</p>
-      </section>
-
-      <section>
-        <h1>IMAGE GALLERY</h1>
+      <br>
+      
+      <h1>IMAGE GALLERY</h1>
 
         <div class="dropdown-box">
           <label for="mediaType">Choose media:</label>
@@ -405,7 +377,6 @@
             <div class="modal-content" id="modalContent"></div>
           </div>
         </div>
-      </section>
     </main>
   
 
