@@ -22,7 +22,7 @@
       text-align: center;
     }
 
-    h1, p {
+    header h1, p {
       text-align: center;
       margin: 20px auto;
     }
@@ -212,18 +212,19 @@
 
 <body>
   <header>
-    <h1>RAS598: TEAM-04</h1>
+    <h1><b>RAS598: TEAM-04</b></h1>
     <p>STIFFNESS MEASUREMENT USING FORCE GAUGE</p>
   </header>
 
   <main>
       
-    <h1>SCOPE</h1>
+    <h1><b>SCOPE</b></h1>
     <p>The stiffness of the ankle in the pogo stick-type model is characterized through 
       a separate controlled experiment using a force-displacement test setup. 
       This setup is designed to apply loads to the ankle joint and measure the corresponding force,
       allowing the identification of accurate force-displacement points.
     </p>
+  <br>
 
     <div class="mermaid">
       graph TD  
@@ -239,7 +240,7 @@
 
   <br>
   
-    <h1>EXPERIMENTATION WORKFLOW</h1>
+    <h1><b>EXPERIMENTATION WORKFLOW</b></h1>
     
     <h2>Project Setup:</h2>
     <p>The setup contains a prototype of an ankle + leg of a quadruped, similar to a pogo stick model, with a Force Gauge ready to record data.</p>
@@ -268,14 +269,14 @@
   
   <br>
   
-    <h1>HARDWARE CONFIGURATION</h1>
+    <h1><b>HARDWARE CONFIGURATION</b></h1>
     <p>The specimen is secured on the ground and connected to the Force Gauge using a string. Tensile forces are applied, and the force is recorded through multiple displacement markers.</p>
     <p>Initial testing was done manually, but to improve accuracy and repeatability, a UR5 robotic arm is now used.</p>
   
   <br>
 
  
-    <h1>SOFTWARE CONFIGURATION / ROS2 ARCHITECTURE</h1>
+    <h1><b>SOFTWARE CONFIGURATION / ROS2 ARCHITECTURE</b></h1>
     <p>The Mark-10 M4-10 force gauge communicates with the system via USB serial (baud rate: 9600).</p>
 
     <br>
@@ -311,14 +312,15 @@
     
   <br>
 
-    <h1>DATA COLLECTION</h1>
+    <h1><b>DATA COLLECTION</b></h1>
     <h2>STIFFNESS</h2>
     <p>(Check Image Gallery) shows two situations of physically pulling the Force Gauge and finding the best fit line. As seen in the results, the results are varying different counting for human error 
     and lack of data points. But the closeness of the values validate the repeatability of the setup.</p> 
 
 
   <br>
-  
+
+  <h1><b>CONCLUSION</b></h1>
   <h1>IMAGE GALLERY</h1>
 
     <div class="dropdown-box">
