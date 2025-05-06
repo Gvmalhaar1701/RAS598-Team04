@@ -197,32 +197,35 @@
     }
 
     .code-container {
-      background-color: #8c1d40;
-      color: #f8f8f2;
+      background-color: #ffc627;
+      color: #000;
       font-family: monospace;
       border-radius: 8px;
       overflow: hidden;
-      max-height: 100px;
-      transition: max-height 0.3s ease;
-      cursor: pointer;
+      max-height: 150px; /* collapsed height */
+      transition: max-height 0.4s ease;
       position: relative;
+      cursor: pointer;
     }
 
     .code-container.expanded {
-      max-height: 600px;
+      max-height: 1000px; /* expanded height */
     }
 
-    pre {
+    .code-container pre {
       margin: 0;
-      padding: 10px 15px;
+      padding: 15px;
+      white-space: pre;
       overflow-x: auto;
+      overflow-y: auto;
+      max-height: 1000px;
     }
 
     .code-container::after {
       content: "Click to expand/collapse";
       position: absolute;
-      bottom: 5px;
-      right: 10px;
+      bottom: 8px;
+      right: 15px;
       font-size: 12px;
       color: #888;
     }
@@ -323,8 +326,8 @@
        the IP of the streaming engine and the static IP we set for our ethernet. The program generates a live plot for the position and orientation and displays it as well, which proved the possibility of a data communication and got us closer to our goal. 
      </p>
     
-    <div class="code-container" id="codeBox" onclick="this.classList.toggle('expanded')">
-        <pre id="codeContent">Loading...</pre>
+     <div class="code-container" id="codeBox" onclick="this.classList.toggle('expanded')">
+        <pre id="codeContent">Loading code...</pre>
       </div>
       
 
@@ -412,9 +415,12 @@
 </main>
 <script>
     fetch('NatNet_LivePlot_XYZ_1.py')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('codeContent').textContent = data;
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('codeContent').textContent = data;
+        })
+        .catch(err => {
+          document.getElementById('codeContent').textContent = "Failed to load code.";
     });
     function switchGallery() {
       const selection = document.getElementById("mediaType").value;
